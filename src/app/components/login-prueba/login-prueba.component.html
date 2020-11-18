@@ -1,0 +1,68 @@
+<table align="center">
+    <tbody>
+        <tr>
+            <td width="420" align="left">
+                <img class="imgL" src="./assets/stps.png" >
+            </td>
+            <td width="683" align="right">
+                <div class="col-lg-12">
+                    <div class="bg-5">
+                     <h2 class="animated-shadow">Norma Oficial Mexicana NOM-035-STPS-2018</h2>
+                     <!-- <h2>Norma Oficial Mexicana NOM-035-STPS-2018</h2> -->
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="br">
+
+<div class="cuadro">
+    <img src="./assets/GOB_Logo_Pro_VinoA.jpg"  class="img1" id="logo-Secretaria-Salud" />
+</div>
+<div class="container">
+    <form class="signUp" [formGroup]="signupForm"  (ngSubmit)="enviar(signupForm.value)" action="" >
+        
+        
+        <h3>CREA TU CUENTA</h3>
+        
+        <input formControlName="email" class="w100" type="email" placeholder="Ingresa Email" reqired autocomplete='off' />
+        <div *ngIf="signupForm.get('email').hasError('email') && signupForm.get('email').touched"> Es nesesario introducir el email</div>
+
+        <input formControlName="nombre" type="text" placeholder="Nombre" required>
+
+        <input formControlName="empresa" type="text" placeholder="Empresa" required>
+
+        <input formControlName="domicilio" type="text" placeholder="Domicilio" required>
+
+        <input formControlName="telefono" type="text" placeholder="Telefono" required>
+
+        <!-- <select >
+            <option>Unidad Responsable</option>
+            <option>Supervisor</option>
+            <option>Administracion</option>
+            <option>Responsable</option>
+        </select> -->
+        <input formControlName="password" type="password" placeholder="Ingresa contraseña" reqired />
+        <input formControlName="password2" type="password" placeholder="Verificar contraseña" reqired />
+
+        <button class="form-btn sx log-in" type="button">Iniciar sesion</button>
+        <button [disabled]="signupForm.invalid" class="form-btn dx" type="submit">Registrarte</button>
+    </form>
+    <form class="signIn" [formGroup]="signupForm2"  (ngSubmit)="enviar2(signupForm2.value)">
+        <h3>¡BIENVENIDO DE
+            <br>NUEVO !</h3>
+        <button class="fb" type="button">Log In With Facebook</button>
+        <p>- or -</p>
+        <input formControlName="email" type="email" placeholder="Ingresa Email" autocomplete='off' reqired />
+        <div *ngIf="signupForm2.get('email').hasError('email') && signupForm2.get('email').touched"> Es nesesario introducir el email</div>
+
+        <input formControlName="password" type="password" placeholder="Ingresa contraseña" reqired />
+        <button class="form-btn sx back" type="button">Registrarte</button>
+        <button [disabled]="signupForm2.invalid" class="form-btn dx" type="submit">Iniciar sesion</button>
+    </form>
+</div>
+
+</div>
+
